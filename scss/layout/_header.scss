@@ -1,0 +1,18 @@
+.header {
+  text-align: center;
+  & > * {
+    margin: 3% 0;
+  }
+
+  &__heading--light {
+    font-weight: $font-light;
+  }
+
+  &__heading--bold {
+    font-weight: $font-heavy;
+  }
+
+  &__text {
+    font-size: $font-size;
+  }
+}
