@@ -13,14 +13,16 @@ h6 {
   color: #4c4e61; }
 
 p {
-  color: #a3a5ae; }
+  color: #a3a5ae;
+  font-size: 15px;
+  line-height: calc(15px * 1.6); }
 
 body {
   background-color: #fafafa;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  padding: 80px 40px 15px 40px;
+  padding: 80px 30px 15px 30px;
   font-family: "Poppins", sans-serif; }
 
 .header {
@@ -31,8 +33,6 @@ body {
     font-weight: 200; }
   .header__heading--bold {
     font-weight: 600; }
-  .header__text {
-    font-size: 15px; }
 
 main {
   flex: 1;
@@ -40,23 +40,42 @@ main {
   flex-direction: column;
   margin: 50px 0; }
   main > .card {
-    height: 200px;
     width: 100%;
-    box-shadow: 0px 5px 20px #a3a5ae;
-    padding: 5%;
+    -webkit-box-shadow: 0px 5px 20px 0px #a3a5ae;
+    -moz-box-shadow: 0px 5px 20px 0px #a3a5ae;
+    box-shadow: 0px 5px 20px -10px #a3a5ae;
+    padding: 10%;
     margin: 5% 0;
     border-top-width: 4px;
     border-top-style: solid;
     background-color: white;
-    border-radius: 2%; }
-    main > .card--cyan {
-      border-top-color: #45d3d3; }
-    main > .card--red {
-      border-top-color: #ea5353; }
-    main > .card--orange {
-      border-top-color: #fcaf4a; }
-    main > .card--blue {
-      border-top-color: #549ef2; }
+    border-radius: 2%;
+    display: flex;
+    flex-direction: column; }
+    main > .card .card__text {
+      font-size: small; }
+    main > .card--supervisor {
+      border-top-color: #45d3d3;
+      grid-area: supervisor; }
+    main > .card--team {
+      border-top-color: #ea5353;
+      grid-area: team; }
+    main > .card--karma {
+      border-top-color: #fcaf4a;
+      grid-area: karma; }
+    main > .card--calculator {
+      border-top-color: #549ef2;
+      grid-area: calculator; }
+    main > .card > img {
+      align-self: flex-end;
+      margin-top: 12.5%;
+      width: 55px; }
+  @media (min-width: 1440px) {
+    main {
+      display: grid;
+      grid-template-areas: "...        team    ...       " "supervisor team    calculator" "supervisor karma   calculator" "...        karma   ...       ";
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(4, 1fr); } }
 
 footer .attribution {
   font-size: 11px;

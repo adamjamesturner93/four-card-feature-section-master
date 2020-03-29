@@ -5,27 +5,63 @@ main {
   margin: 50px 0;
 
   & > .card {
-    height: 200px;
     width: 100%;
-    box-shadow: 0px 5px 20px $blue_grey;
-    padding: 5%;
+    -webkit-box-shadow: 0px 5px 20px 0px $blue_grey;
+    -moz-box-shadow: 0px 5px 20px 0px $blue_grey;
+    box-shadow: 0px 5px 20px -10px $blue_grey;
+    padding: 10%;
+    // padding-bottom: 0;
     margin: 5% 0;
     border-top-width: 4px;
     border-top-style: solid;
     background-color: white;
     border-radius: 2%;
 
-    &--cyan {
+    display: flex;
+    flex-direction: column;
+
+    & .card__text {
+      font-size: small;
+    }
+
+    &--supervisor {
       border-top-color: $cyan;
+      grid-area: supervisor;
     }
-    &--red {
+    &--team {
       border-top-color: $red;
+      grid-area: team;
     }
-    &--orange {
+    &--karma {
       border-top-color: $orange;
+      grid-area: karma;
     }
-    &--blue {
+    &--calculator {
       border-top-color: $blue;
+      grid-area: calculator;
     }
+
+    & > img {
+      align-self: flex-end;
+      margin-top: 12.5%;
+      width: 55px;
+    }
+
+    // @media (min-width: $desktop) {
+    //   width: 25%;
+    //   padding: 5%;
+    // }
+  }
+
+  @media (min-width: $desktop) {
+    display: grid;
+    grid-template-areas:
+      "...        team    ...       "
+      "supervisor team    calculator"
+      "supervisor karma   calculator"
+      "...        karma   ...       ";
+
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }

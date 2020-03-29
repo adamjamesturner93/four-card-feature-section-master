@@ -15,4 +15,6 @@ h6 {
 
 p {
   color: $blue_grey;
+  font-size: $font-size;
+  line-height: calc(#{$font-size} * 1.6);
 }

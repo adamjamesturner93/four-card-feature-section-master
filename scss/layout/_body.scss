@@ -1,9 +1,13 @@
 body {
   background-color: $grey_light;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
 
-  padding: 80px 40px 15px 40px;
+  padding: 80px 30px 15px 30px;
   font-family: "Poppins", sans-serif;
+
+  // @media (min-width: $desktop) {
+  //   display: grid;
+  // }
 }
