@@ -2,13 +2,29 @@
   text-align: center;
   & > * {
     margin: 3% 0;
+
+    @media (min-width: $desktop) {
+      margin: 0;
+    }
   }
 
   &__heading--light {
     font-weight: $font-light;
+
+    @media (min-width: $desktop) {
+      font-size: xx-large;
+    }
   }
 
   &__heading--bold {
     font-weight: $font-heavy;
+
+    @media (min-width: $desktop) {
+      font-size: xx-large;
+    }
+  }
+
+  @media (min-width: $desktop) {
+    padding-top: 30px;
   }
 }

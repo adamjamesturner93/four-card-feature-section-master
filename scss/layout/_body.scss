@@ -7,7 +7,7 @@ body {
   padding: 80px 30px 15px 30px;
   font-family: "Poppins", sans-serif;
 
-  // @media (min-width: $desktop) {
-  //   display: grid;
-  // }
+  @media (min-width: $desktop) {
+    padding: 2%;
+  }
 }
